@@ -1,0 +1,30 @@
+---
+# This playbook deploys ...
+
+  - name: common configuration      
+    hosts: all
+    remote_user: dimtyp
+    become: yes
+    become_method: sudo
+    become_user: dimtyp
+
+    roles:
+      - common
+
+  - name: configure and deploy webservers and applications
+    hosts: webservers
+    remote_user: dimtyp
+
+    roles:
+      - web
+
+  - name: PostgreSQL - deployment and configuration
+    hosts: dbservers
+    remote_user: dimtyp
+
+    roles:
+      - db       
+         
+
+
+

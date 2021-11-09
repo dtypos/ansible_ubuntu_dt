@@ -1,0 +1,37 @@
+---
+# update apt cache 
+
+  - name: Update APT Cache
+    become_user: dimtyp
+    become_method: sudo
+    apt:
+      update_cache: yes
+      force_apt_get: yes
+
+ # package upgrade
+  - name: Upgrade all packages to the latest version
+    become_user: dimtyp
+    become_method: sudo
+    apt:
+      name: "*"
+      #upgrade: yes
+      #state: latest
+      force_apt_get: yes      
+
+
+# nginx installation   
+  - name: install nginx
+    become_user: dimtyp
+    become_method: sudo
+    apt:
+      name: nginx
+      state: latest
+
+
+# nginx start        
+  - name: start nginx
+    service:
+      name: nginx
+      state: started
+      enabled: true
+

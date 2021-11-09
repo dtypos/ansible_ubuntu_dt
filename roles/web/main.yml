@@ -1,0 +1,18 @@
+---
+# package install
+
+  - name: install packages
+    hosts: webservers
+    become: yes
+    become_user: root
+    remote_user: dimtyp
+    vars:
+      - packages:
+        -python-apt      
+        -nginx
+
+  - name: python installation
+    hosts: webservers
+    remote_user: dimtyp
+    sudo: yes
+    gather_facts: no

@@ -1,0 +1,6 @@
+---
+# importing nginx and python app
+
+  - include: nginx.yml
+  - include: python3_install.yml  
+  - include: python3_app.yml

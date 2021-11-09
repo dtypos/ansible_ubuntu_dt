@@ -1,0 +1,7 @@
+---
+#  variables' definition
+
+  vars:
+    db_user: dbuser
+    db_name: dbname
+    db_password: dbpass
